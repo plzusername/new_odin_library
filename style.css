@@ -11,6 +11,7 @@ body{
     height: 100vh;
     display: grid;
     grid-template-rows: max-content 1fr max-content;
+    background-color: rgb(150, 150, 150);
 }
 
 .header-section{
@@ -19,7 +20,8 @@ body{
     color: white;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+    justify-content: center;
+}   
 
 .header-section button{
     background-color: white;
@@ -45,13 +47,15 @@ body{
 
 .books-container{
     display: grid;
-    gap: calc(2rem - 3vw);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(30%, max-content));
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    align-content: start;
+    padding-top: 3.5rem;
+    justify-content: center;
 } 
-
-.books-container, footer{
-    background-color: rgb(150, 150, 150);
-}
 
 footer{
     display: grid;
@@ -84,3 +88,184 @@ a > *{
 a:hover > *{
     color: white;
 }
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hidden{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.active{
+    pointer-events:all;
+    opacity: 1;
+}
+
+.overlay.active{
+    z-index: 5;
+}
+
+.modal-container > *{
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 16px;
+    min-width: calc(25vw);
+    font-weight: 900;
+}
+
+.form-header-section{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    padding: 0.8rem;
+    border-radius: 12px 12px 0 0;
+    background-color: rgb(41, 44, 51);
+    align-items: center;
+    color: white;
+}
+
+.form-header-section h2{
+    font-size: 1rem;
+}
+
+.form-header-section i{
+    font-size: 1.5rem;
+}
+
+.form-header-section i:hover{
+    color: rgb(78, 155, 218);
+    cursor: pointer;
+}
+
+.form-input-section{
+    padding: 0.8rem;
+    background-color: rgb(225, 225, 225);
+    border-radius: 0 0 12px 12px;
+}
+
+.button-container{
+    padding: 0.8rem;
+    text-align: right;
+    background-color: rgb(225, 225, 225);
+}
+
+.button-container button{
+    color: white;
+    background-color: rgb(41, 44, 51);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: ease-in-out 0.15s;
+}
+
+.button-container button:hover{
+    background-color: rgb(78, 155, 218);
+    color: white;
+    cursor: pointer;
+}
+
+.title-form-section,
+.author-form-section,
+.page-form-section{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.title-form-section input,
+.author-form-section input,
+.page-form-section input{
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px rgb(200, 200, 200) solid; 
+    height: 2rem;
+}
+
+.title-form-section label,
+.author-form-section label,
+.page-form-section label{
+    margin-bottom: 4px;
+}
+
+.page-form-section input{
+    width: 20%;
+}
+
+
+
+.modal-container > *.active{
+    z-index: 6;
+}
+
+.book{
+    border-radius: 6px;
+    border-left: 12px rgb(78, 155, 218) solid;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+    transition: ease-in-out 0.15s;
+    position: relative;
+}
+
+.options-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-container > *{
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.buttons-container > *:hover{
+    color: white;
+    background-color:rgb(78, 155, 218) ;
+    cursor: pointer;
+}
+
+
+.button-container{
+    display: flex;
+    justify-content: right;
+    gap: 8px;
+}
+.read-container:hover{
+    cursor: pointer;
+    color: rgb(78, 155, 218);
+}
+
+.book .author-text{
+    margin-bottom: 5px;
+}
+
+.book .pages-text{
+    margin-bottom: 12px;
+}
+
+.book:hover{
+    scale: 1.1;
+}
+
+.book::before{
+    content: 'Double click to edit';
+    color: white;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    bottom: 105%;
+    transition: ease-in-out 0.15s;
+}
+
+.book:hover::before{
+    opacity: 1;
+}
+

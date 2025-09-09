@@ -7,6 +7,8 @@
     <script src="https://kit.fontawesome.com/a664bb4fd7.js" crossorigin="anonymous"></script>
     <!-- <i class="fa-solid fa-trash"></i> -->
      <!-- <i class="fa-solid fa-pen-to-square"></i> -->
+      <!-- <i class="fa-solid fa-border-none"></i> -->
+       <!-- <i class="fa-solid fa-square-check"></i> -->
     <title>Odin Library</title>
 </head>
 <body>
@@ -26,5 +28,76 @@
         </a>
     </footer>
 
+    <div class="overlay hidden"></div>
+    <div class="modal-container">
+        <div class="edit-modal hidden">
+            <div class="form-header-section">
+                <h2 class="header"></h2>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form class="form-input-section">
+                <div class="title-form-section">
+                    <label for="title-input-edit">Title</label>
+                    <input minlength="1" required id="title-input-edit" type="text" name="title-input-edit">
+                </div>
+                <div class="author-form-section">
+                    <label for="author-input-edit">Author</label>
+                    <input minlength="1" required type="text" id="author-input-edit" name="author-input-edit">
+                </div>
+                <div class="page-form-section">
+                    <label for="page-input-edit">Page</label>
+                    <input required step='any' type="number" id="page-input-edit" name="page-input-edit">
+                </div>
+                <div class="read-form-section">
+                                            <input type="checkbox" id="read-input-edit" name="read-input-edit">
+                    <label for="read-input-edit">
+                        Have you read This book before?
+                    </label>
+                </div>
+                            <div class="button-container">
+                <button type="submit" class="book-update-button">Update Book</button>
+            </div>
+
+            </form>
+
+        </div>
+
+        <div class="add-modal hidden">
+            <div class="form-header-section">
+                <h2 class="header">Add Book to Library</h2>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form class="form-input-section">
+                <div class="title-form-section">
+                    <label for="title-input-add">   
+                         Title</label> 
+                         <input minlength="1" required id="title-input-add" type="text" name="title-input-add">
+                </div>
+                <div class="author-form-section">
+                    <label for="author-input-add"> Author</label>
+                    <input minlength="1" required type="text" id="author-input-add" name="author-input-add">
+                </div>
+                <div class="page-form-section">
+                    <label for="page-input-add">Page</label>
+                    <input required step='any' type="number" id="page-input-add" name="page-input-add">
+                    
+                </div>
+                <div class="read-form-section">
+                                        <input type="checkbox" id="read-input-add" name="read-input-add">
+                    <label for="read-input-add">
+                        Have you read This book before?
+                    </label>
+                </div>
+                            <div class="button-container">
+                <button type="submit" class="book-add-button">Add Book</button>
+            </div>
+
+            </form>
+        </div>
+
+
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
