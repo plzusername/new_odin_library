@@ -1,25 +1,41 @@
-Book.prototype.toggleRead = function(){
-    this.read = !this.read
-}
+// Book.prototype.toggleRead = function(){
+//     this.read = !this.read
+// }
 
-Book.prototype.setIndex = function(newIndex){
-    this.index = newIndex
-}
+// Book.prototype.setIndex = function(newIndex){
+//     this.index = newIndex
+// }
 
 
-Book.prototype.editInfo = function(newTitle, newAuthor, newPages, newRead){
-    this.title = newTitle
-    this.author = newAuthor
-    this.pages = newPages
-    this.read = newRead
-}
+// Book.prototype.editInfo = function(newTitle, newAuthor, newPages, newRead){
+//     this.title = newTitle
+//     this.author = newAuthor
+//     this.pages = newPages
+//     this.read = newRead
+// }
 
-function Book(title, author, pages, read){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.index = null
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+        this.index = null
+    }
+
+    editInfo = function(newTitle, newAuthor, newPages, newRead){
+        this.title = newTitle
+        this.author = newAuthor
+        this.pages = newPages
+        this.read = newRead
+    }
+    setIndex = function(newIndex){
+        this.index = newIndex
+    }
+    toggleRead = function(){
+        this.read = !this.read
+    }
+
 }
 
 const libraryBooks = {
